@@ -32,7 +32,7 @@ export default function Home() {
         <Image
           className={styles.logo}
           src="/next.svg"
-          alt="Vinicio"
+          alt="Docs"
           width={180}
           height={37}
           priority
@@ -41,22 +41,34 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            href="https://www.ubisoft.com/es-mx/game/rainbow-six/siege"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <h2>
-            Vinicio <span>-&gt;</span>
+            R6 <span>-&gt;</span>
+          </h2>
+          <p>Go get Rainbow 6 Siege!</p>
+        </a>
+
+        <a
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+          <h2>
+            Docs <span>-&gt;</span>
           </h2>
           <p>Find in-depth information about Next.js features and API.</p>
         </a>
 
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <h2>
             Learn <span>-&gt;</span>
@@ -65,10 +77,10 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <h2>
             Templates <span>-&gt;</span>
@@ -77,10 +89,10 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <h2>
             Deploy <span>-&gt;</span>
