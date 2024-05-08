@@ -51,16 +51,6 @@ export default function Home() {
         </a>
 
         <a
-            href="/signUp"
-            className={styles.card}
-        >
-          <h2>
-            Sign up <span>-&gt;</span>
-          </h2>
-          <p>Sign up page</p>
-        </a>
-
-        <a
             href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
             target="_blank"
