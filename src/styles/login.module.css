@@ -1,0 +1,45 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: whitesmoke; /* Fondo blanco */
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgba(105, 105, 105, 0.8); /* Fondo gris con transparencia */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+    padding: 20px;
+    margin-top: 200px; /* Desplaza el formulario más abajo */
+}
+
+.loginForm input,
+.loginForm button {
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.goBackBtn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: grey;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.errorMessage {
+    color: red;
+    margin-top: 10px;
+}
