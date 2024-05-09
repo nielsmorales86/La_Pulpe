@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/login.module.css';
-import {useState} from "react"; // Make sure to create this CSS module file
+import { useState } from "react";
 
 export default function SignUp() {
     const [username, setUsername] = useState('');
@@ -8,18 +8,39 @@ export default function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
             setErrorMessage('Passwords do not match');
             return;
         }
-        setErrorMessage('');
-        console.log('Sign up submitted for', username, 'with password', password);
+
+        try {
+            const response = await fetch('/api/users/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            console.log('User created successfully:', data);
+            // Redirect or show a success message
+            setErrorMessage('User created successfully!');
+        } catch (error) {
+            console.error('Failed to create user:', error);
+            setErrorMessage(error.message || 'Failed to create user');
+        }
     };
 
     const isFormValid = password === confirmPassword && username && password;
+
 
     return (
         <div className={styles.loginContainer}>
