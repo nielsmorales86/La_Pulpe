@@ -33,7 +33,6 @@
     align-items: center; /* Centra el contenido del formulario */
     width: 350px;
     background-color: transparent;
-    border: 0px solid rgba(255, 255, 255, 0.5); /* Borde blanco sutil */
     border-radius: 30px; /* Bordes más redondeados */
     padding: 30px;
     transition: all 0.3s ease; /* Transición suave */
@@ -61,8 +60,8 @@
 
 .loginForm input {
     outline: none; /* Elimina el borde azul al hacer clic */
-    background-color whitesmoke;
-    color black;
+    background-color: white; /* Fondo blanco */
+    color: black;
 }
 
 .loginForm button {
