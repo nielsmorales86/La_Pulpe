@@ -1,18 +1,23 @@
 import Head from 'next/head';
 import styles from '../styles/login.module.css';
 import { useState } from "react";
+import Swal from 'sweetalert2';
+import Router from 'next/router';
 
 export default function SignUp() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
-            setErrorMessage('Passwords do not match');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Passwords do not match!',
+            });
             return;
         }
 
@@ -31,16 +36,28 @@ export default function SignUp() {
 
             const data = await response.json();
             console.log('User created successfully:', data);
-            // Redirect or show a success message
-            setErrorMessage('User created successfully!');
+
+            Swal.fire({
+                title: 'Success!',
+                text: 'User created successfully!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Router.push('/');
+                }
+            });
         } catch (error) {
             console.error('Failed to create user:', error);
-            setErrorMessage(error.message || 'Failed to create user');
+            Swal.fire({
+                icon: 'error',
+                title: 'Failed to create user',
+                text: error.message || 'Failed to create user',
+            });
         }
     };
 
     const isFormValid = password === confirmPassword && username && password;
-
 
     return (
         <div className={styles.loginContainer}>
@@ -72,7 +89,6 @@ export default function SignUp() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                 />
-                {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
                 <button type="submit" disabled={!isFormValid}>Confirm</button>
                 <div className={styles.btnContainer}>
                 <a href="/" className={styles.goBackBtn}>Go back</a>
